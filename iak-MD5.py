@@ -20,7 +20,7 @@ def cmd5(key):
         'ctl00$ContentPlaceHolder1$Button1':'%E6%9F%A5%E8%AF%A2'
     }
     #在headers['cookie']中添加你的cookie，避免频繁查寻，导致的查询失败
-    headers['cookie'] = '_uab_collina=157494508914710214472844; Hm_lvt_0b7ba6c81309fff7ce4498ec7b107c0b=1615548195; Hm_lpvt_0b7ba6c81309fff7ce4498ec7b107c0b=1615548229; ASP.NET_SessionId=enqivqbrchseb2n1wbqysig5; user=8Pdam31H0sBBOB99kpAQWz2TpsaUCVycTeNZrKq96tAQw5hwTfk14vUdT/zqlPwep5RWYHZbTXeVykd/goIlCWQRCBuieeQC3OnqMP6TQY+BWuVNWB8EuBgqSSNLqVo/SyLO+fDuNTjDmNmI8mPFE+YwH+GcSTZXejVA+XNlyJ7K2+cEtRzWyuSPFRbRGeAAua0g9TmuE3Lnh7bvowfL2eRwTNY2iqH4tYxE+YygdlbPfme78qOZRX6mRZBUIBbqMOYgLR7IG3brfWRvd7tnIz0v1lXVP76XObN/6wMd/Pa+WoTJgMWhcb86tzDds5H63ODPiTt/cTiKofKUxHdwqu2LB7PJ7HXZnEqYluwuU6qvceHzVy5y66xYX0YAHEkFi1lCUFXGRINOkKXOJaP7Ay3Ii7cA0lDQKxFGU3mgdY5ed7M3T2QDn6F/vyKrTMhI;'
+    headers['cookie'] = ''
     headers['Referer'] = 'https://cmd5.com'
     try:  
         req = requests.post(url,headers=headers,data=data,timeout=5)
@@ -53,7 +53,8 @@ def t007(key):
         'ciphertype_id':'1',
         'rnd':'0.42960200194831666'
         }
-    headers['cookie'] = 'PHPSESSID=1585ca0m8t6it1iqoe3c1qnja0'
+    #在headers['cookie']中添加你的cookie
+    headers['cookie'] = ''
     try:
         req = requests.post(url, data=data, headers=headers)
         req.encoding='utf-8'
@@ -99,11 +100,7 @@ def md5_my_addr(key):
 def md5_tellyou(key):
     url = "http://md5.tellyou.top/MD5Service.asmx/HelloMd5"
     data = "Ciphertext=" + key
-    headers1 = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)",
-    "X-Forwarded-For": "192.168.1.1"
-}
+    headers["X-Forwarded-For"] = "192.168.1.1"
     try:
         req = requests.post(url,data=data,headers=headers1)
         reqaq = re.findall('org\/\"\>(.*?)\<\/string\>',req.text)
@@ -195,7 +192,8 @@ def cmd5_la(key):
         "pwd":key,
         'jiejia':"jie"
         }
-    headers['cookie'] = "security_session_verify=9330f51d30fa17d9082dc3cd8f4daf6f; PHPSESSID=5ikmeng8506bf40cmcoj3srijt; user=bnUwbA%3D%3D; pwd=ZWUzMGY1MjM1NTQzODM2Y2E4ODlmMGUzYjUyZTc2YzY%3D; uid=Mzg1OTg%3D"
+    #在headers['cookie']中添加你的cookie
+    headers['cookie'] = ""
     try:
         req = requests.post(url, data=data, headers=headers)
         reqaq = re.findall('\:(.*)',req.text)
@@ -208,7 +206,8 @@ def cmd5_la(key):
 
 def xmd5(key):
     url = 'http://www.xmd5.org/md5/search.asp?hash='+str(key)+'&xmd5=MD5+%BD%E2%C3%DC&open=on&checkcode2=5e5c73eb3d3d3cc0a745603f79dd1239'
-    headers['cookie'] = "ASPSESSIONIDQADBRDDS=ODGHIJJBENGFAAANFKAMEBLC; runcookie=74b966fbf2577dbc012df53655b370c2; ssip=17701683b53b6abacb5a67002d3d14ea; ssid=6e27b29a3ddcd5bae6e4d78d39390105; safedog-flow-item=9A1FCE858FD9B216B0669CC95EC885C0; xmd5=found=0&fee=0&utype=0&code1=0&password=d388b5cce1fcf31d8e50b47f02ec34e7&lastlog=2021%2D3%2D13+20%3A21%3A02&username=kai1220%40vip%2Eqq%2Ecom; runp=17701683b53b6abacb5a67002d3d14ea12; UM_distinctid=1782b8974991e3-074a0d62f255498-1368624a-1fa400-1782b89749a2f4; CNZZDATA1279142125=205495197-1615637525-http%253A%252F%252Fwww.xmd5.org%252F%7C1615638144; logincheck=1"
+    #在headers['cookie']中添加你的cookie
+    headers['cookie'] = ""
     headers['Referer'] = "http://www.xmd5.org/"
     try:
         req = requests.get(url, headers=headers,allow_redirects=False)
